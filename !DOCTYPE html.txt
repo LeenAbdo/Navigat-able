@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+    type="text/css"
+  />
+  <title>Google Maps Clone</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #microphoneButton {
+      background-color: #ffffff;
+      border: none;
+      border-radius: 100%;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1; /* Set a higher z-index for the button */
+
+    }
+
+    #microphoneButton img {
+      width: 17px; /* Adjust the size of the microphone icon as needed */
+    }
+
+    .button-container {
+      position: absolute;
+      top: 6.5%;
+      left: 22%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* Set a higher z-index for the button */
+
+    }
+    #geocoder-container > div {
+      min-width: 50%;
+      margin-left: 25%;
+    }
+  </style>
+  <script src="script.js" defer> </script>
+
+</head>
+<body>
+  <script>
+    function record() {
+      var recognition = new webkitSpeechRecognition();
+      recognition.lang = "en-GB";
+
+     recognition.onresult = function(event) {
+      console.log(event);
+      destintation = event.results[0][0].transcript;}
+    recognition.start();
+  } </script>
+  
+  <div class="button-container">
+    <button type="button" id="microphoneButton" onclick="record()">
+      <img src="C:\Users\wissam\Desktop\BAU wissam\Extra\extra\Hackathon\mic.png" alt="Microphone">
+    </button>
+  </div>
+  <div id='map'></div>
+
+  map.on
+</body>
+</html>
